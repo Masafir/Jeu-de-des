@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head> <meta charset="utf-8"/>
+<title>Lancer de dès</title> </head>
+<body>
+<script>
+
+var score=0;
+var jeu =[];
+var occ1=0;
+var occ2=0;
+var occ3=0;
+var occ4=0;
+var occ5=0;
+var occ6=0;
+var resultatjet=0;
+var resultatfin=0;
+var desrestant=5;
+var continuer=false;
+var comptedes=1;
+
+
+
+function reset()
+{
+  jeu.length=0;
+  desrestant=5;
+  continuer=true;
+  jeux();
+}
+
+//jet de 5 dès
+function jet(x)
+{
+
+for(var i=0;i<x;++i)
+{
+  //aleatoire de 1 à 6
+score=Math.floor(Math.random()*Math.floor(6));
+jeu.push(score+1);
+document.write(jeu[i]+" / ");
+}
+}
+
+//recherche identification des dès
+function res(x)
+{
+
+  for(var i=0;i<=x.length;++i)
+  {
+    if(x[i]==1)
+    {
+        occ1=1+occ1;
+    }
+    else if(x[i]==2)
+    {
+        occ2=1+occ2;
+    }
+    else if(x[i]==3)
+    {
+        occ3=1+occ3;
+    }
+    else if(x[i]==4)
+    {
+        occ4=1+occ4;
+    }
+    else if(x[i]==5)
+    {
+        occ5=1+occ5;
+    }
+    else if(x[i]==6)
+    {
+        occ6=1+occ6;
+    }
+  }
+  /*document.write(" /*//*  1: "+occ1+" /2: "+occ2+" /3: "+occ3+" /4: "+occ4+" /5: "+occ5+" /6: "+occ6);
+*/
+}
+//attribution des points
+function resone(x)
+{
+  if(x==5)
+  {
+      alert("Vous avez gagné !!!!");
+      var rem=confirm("Voulez vous rejouer au Walou ?");
+      if (rem==true)
+      {
+          reset();
+      }
+  }
+  else if (x==4)
+  {
+      resultatjet=resultatjet+2000;
+      desrestant=desrestant-4;
+      continuer=true;
+  }
+  else if (x==3)
+  {
+      resultatjet=resultatjet+1000;
+      desrestant=desrestant-3;
+      continuer=true;
+  }
+  else if (x==2)
+  {
+      resultatjet=resultatjet+200;
+      desrestant=desrestant-2;
+      continuer=true;
+  }
+  else if (x==1)
+  {
+      resultatjet=resultatjet+100;
+      desrestant=desrestant-1;
+      continuer=true;
+  }
+}
+
+
+function resfiv(x)
+{
+  if(x==5)
+  {
+      alert("Vous avez gagné !!!!");
+      var rem=confirm("Voulez vous rejouer au Walou ?");
+      if (rem==true)
+      {
+          reset();
+      }
+  }
+  else if (x==4)
+  {
+      resultatjet=resultatjet+1000;
+      desrestant=desrestant-4;
+      continuer=true;
+  }
+  else if (x==3)
+  {
+      resultatjet=resultatjet+500;
+      desrestant=desrestant-3;
+      continuer=true;
+  }
+  else if (x==2)
+  {
+      resultatjet=resultatjet+100;
+      desrestant=desrestant-2;
+      continuer=true;
+  }
+  else if (x==1)
+  {
+      resultatjet=resultatjet+50;
+      continuer=true;
+      desrestant=desrestant-1;
+  }
+}
+
+
+  function restwo(x)
+{
+  if(x==5)
+  {
+      alert("Vous avez gagné !!!!");
+      var rem=confirm("Voulez vous rejouer au Walou ?");
+      if (rem==true)
+      {
+          reset();
+      }
+
+  }
+  else if (x==4)
+  {
+      resultatjet=resultatjet+1000;
+      desrestant=desrestant-4;
+      continuer=true;
+  }
+  else if (x==3)
+  {
+      resultatjet=resultatjet+200;
+      desrestant=desrestant-3;
+      continuer=true;
+  }
+  else if (x==2)
+  {
+      continuer=false;
+  }
+  else if (x==1)
+  {
+      continuer=false;
+  }
+}
+
+
+function resthree(x)
+{
+if(x==5)
+{
+    alert("Vous avez gagné !!!!");
+    var rem=confirm("Voulez vous rejouer au Walou ?");
+    if (rem==true)
+    {
+        reset();
+    }
+}
+else if (x==4)
+{
+    resultatjet=resultatjet+1000;
+    desrestant=desrestant-4;
+    continuer=true;
+}
+else if (x==3)
+{
+    resultatjet=resultatjet+300;
+    desrestant=desrestant-3;
+    continuer=true;
+}
+else if (x==2)
+{
+    continuer=false;
+}
+else if (x==1)
+{
+    continuer=false;
+}
+}
+
+
+function resfour(x)
+{
+if(x==5)
+{
+    alert("Vous avez gagné !!!!");
+    var rem=confirm("Voulez vous rejouer au Walou ?");
+    if (rem==true)
+    {
+        reset();
+    }
+}
+else if (x==4)
+{
+    resultatjet=resultatjet+1000;
+    desrestant=desrestant-4;
+    continuer=true;
+}
+else if (x==3)
+{
+    resultatjet=resultatjet+400;
+    desrestant=desrestant-3;
+    continuer=true;
+}
+else if (x==2)
+{
+    continuer=false;
+}
+else if (x==1)
+{
+    continuer=false;
+}
+}
+
+
+function resix(x)
+{
+if(x==5)
+{
+    alert("Vous avez gagné !!!!");
+    var rem=confirm("Voulez vous rejouer au Walou ?");
+    if (rem==true)
+    {
+        reset();
+    }
+}
+else if (x==4)
+{
+    resultatjet=resultatjet+1000;
+    desrestant=desrestant-4;
+    continuer=true;
+}
+else if (x==3)
+{
+    resultatjet=resultatjet+600;
+    desrestant=desrestant-3;
+    continuer=true;
+}
+else if (x==2)
+{
+    continuer=false;
+}
+else if (x==1)
+{
+    continuer=false;
+}
+}
+
+function resetocc(a,b,c,d,e,f)
+{
+  document.write("Les occurences sont reset");
+  a=0;
+  b=0;
+  c=0;
+  d=0;
+  e=0;
+  f=0;
+}
+function spe(a,b,c,d,e,f)
+{
+  if ((a==1 && b==1 && c==1 && d==1 && e==1) || (b==1 && c==1 && d==1 && e==1 && f==1))
+  {
+    resultatjet=1500+200;
+    continuer=true;
+    resetocc(a,b,c,d,e,f);
+    desrestant=5;
+    document.write("Main pleine on continue !");
+  }
+  else if ((a==3 || b==3 || c==3 || d==3 || e==3 || f==3) && (a==2 || b==2 || c==2 || d==2 || e==2 || f==2))
+  {
+    resultatjet=1500+200;
+    continuer=true;
+    resetocc(a,b,c,d,e,f);
+    desrestant=5;
+    document.write("Main pleine on continue !");
+  }
+
+  else {
+    continuer=false;
+  }
+
+}
+function rematch(a,b,c,d,e,f)
+{
+  resone(a);
+  restwo(b);
+  resthree(c);
+  resfour(d);
+  resfiv(e);
+  resix(f);
+}
+function perdu ()
+{
+  var perd=confirm("WALOU ! Voulez-vous rejouer ?");
+  switch(perd)
+  {
+    case true:
+    jeu.length=0;
+    desrestant=5;
+    continuer=true;
+    jeux();
+    break;
+    case false:
+    alert("Dommage à une prochaine !");
+
+  }
+
+}
+
+//Erreur au niveau des Walou si il reste + d'un des sinon le tableau marche
+
+function jeux()
+  {
+      var load=resultatjet;
+       occ1=0;
+       occ2=0;
+       occ3=0;
+       occ4=0;
+       occ5=0;
+       occ6=0;
+       jeu.length=0;
+       jet(desrestant);
+       res(jeu);
+       spe(occ1,occ2,occ3,occ4,occ5,occ6);
+      if(continuer==false)
+       {
+         continuer=true;
+         rematch(occ1,occ2,occ3,occ4,occ5,occ6);
+         document.write("Votre score est de "+resultatjet+" ");
+         document.write("<br/>");
+
+                if (continuer==true && desrestant==0 && load!=resultatjet)
+         {
+                var conti=confirm("Voulez vous continuer ?")
+                          if(conti==true)
+                          {
+                          desrestant=5;
+                          resultatjet=resultatjet+200;
+                          jeux();
+                          }
+                          else {
+                            perdu();
+                          }
+         }
+
+  //si il nous reste plus qu'un des
+                  else if (continuer==false && desrestant==1 && comptedes!=0 && load==resultatjet)
+         {
+                  comptedes=comptedes*0;
+                  document.write(" attention dernier dès"+"<br>");
+                  return jeux();
+         }
+  //s'il nous reste des des
+                  else if (continuer==false && desrestant>1 && comptedes!=0  && load==resultatjet)
+         {
+                  comptedes=comptedes*0;
+                  return jeux();
+         }
+                  else if (continuer==false )
+                  {
+                    perdu();
+                  }
+       }
+
+//si on a une main pleine
+      else {
+        document.write("Main pleine ! on continue");
+        desrestant=5;
+        resultatjet=resultatjet+200;
+        return jeux();
+       }
+
+     }
+jeux();
+
+
+</script>
+
+</body>
+</html>
